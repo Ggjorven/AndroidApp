@@ -43,5 +43,9 @@ settings.gradle
 
 Main/App
 
+.idea
 /.idea
+/.idea/
+.gradle
 /.gradle
+/.gradle/
