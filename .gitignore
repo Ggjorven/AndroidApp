@@ -34,3 +34,14 @@
 make
 **.make
 Makefile
+
+# Android
+build.gradle
+gradle.properties
+local.properties
+settings.gradle
+
+Main/App
+
+/.idea
+/.gradle
