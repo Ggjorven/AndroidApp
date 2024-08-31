@@ -49,3 +49,8 @@ Main/App
 .gradle
 /.gradle
 /.gradle/
+
+build
+build/
+/build
+/build/

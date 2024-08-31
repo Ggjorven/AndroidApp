@@ -8,8 +8,8 @@ project "App"
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
     
     filter "system:android"
-        androidsdkversion "29"
-        androidminsdkversion "29"
+        androidsdkversion "34"
+        androidminsdkversion "34"
 
         files 
         { 
@@ -18,6 +18,9 @@ project "App"
             "src/**.cpp", 
 
             "java/**.*",
+
+            -- Has to be specified since the generated one is bad.
+            "AndroidManifest.xml"
         }
 
         includedirs
@@ -42,12 +45,12 @@ project "App"
         
         androidabis
         {
-            "arm64-v8a"
+            "x86_64"
         }
 
         androiddependencies
         {
-            "com.android.support:support-v4:27.1.0",
+            "com.android.support:support-v4:28.0.0",
         }
         
         assetpackdependencies

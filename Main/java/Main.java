@@ -1,4 +1,4 @@
-package Horizon;
+package Android.App.Horizon;
 
 import android.app.Activity;
 import android.os.Bundle;

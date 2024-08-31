@@ -18,15 +18,22 @@ workspace "AndroidApp"
     filter "system:android"
         location ("build")
         
-        gradleversion "com.android.tools.build:gradle:8.0.2"
-        gradlewrapper { "distributionUrl=https://services.gradle.org/distributions/gradle-8.0.2-bin.zip"}
+        gradleversion "com.android.tools.build:gradle:8.5.2"
+        gradlewrapper { "distributionUrl=https://services.gradle.org/distributions/gradle-8.7-all.zip"}
         
+        gradleproperties
+        {
+            "org.gradle.jvmargs=-Xmx4608m",
+            "org.gradle.parallel=true"
+        }
+
         assetpacks
         {
             ["pack"] = "install-time",
         }
 
-        androidnamespace "premake.android.studio"
+        androidappid "Android.App.Horizon"
+        androidnamespace "Android.App.Horizon"
 
 group ""
     include "Main"
