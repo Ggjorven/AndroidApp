@@ -37,5 +37,5 @@ group "Dependencies"
 group ""
 
 group ""
-    include "Main"
+    include "App"
 group ""

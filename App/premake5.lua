@@ -11,8 +11,8 @@ project "App"
         androidsdkversion "34"
         androidminsdkversion "34"
 
-        androidappid "Android.App.Horizon"
-        androidnamespace "Android.App.Horizon"
+        androidappid "Android.App.App"
+        androidnamespace "Android.App.App"
 
         files 
         { 
@@ -33,29 +33,12 @@ project "App"
         
         links
         {
-            "log", -- required for c++ logging	
+            "Lib",
+        }
 
-            "Lib"
-        }
-        
-        buildoptions
-        {
-            "-std=c++20" -- flag mainly here to test cmake compile options
-        }
-        
         linkoptions
         {
             "--no-undefined" -- this flag is used just to cmake link libraries
-        }
-        
-        androidabis
-        {
-            'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
-        }
-
-        androiddependencies
-        {
-            "com.android.support:support-v4:28.0.0",
         }
         
         assetpackdependencies

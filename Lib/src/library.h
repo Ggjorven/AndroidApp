@@ -6,5 +6,6 @@ namespace Lib
 {
 
     int ExportFunc();
+    int EXPORT2();
 
 }

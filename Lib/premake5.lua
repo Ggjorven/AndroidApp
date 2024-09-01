@@ -11,9 +11,6 @@ project "Lib"
         androidsdkversion "34"
         androidminsdkversion "34"
 
-        -- Necessary
-        androidnamespace "build.Lib.main"
-
         files 
         { 
             "src/**.h", 
@@ -28,27 +25,12 @@ project "Lib"
         
         links
         {
-            "log" -- required for c++ logging	
-        }
-        
-        buildoptions
-        {
-            "-std=c++20" -- flag mainly here to test cmake compile options
+            "log" -- required for c++ android logging	
         }
         
         linkoptions
         {
             "--no-undefined" -- this flag is used just to cmake link libraries
-        }
-        
-        androidabis
-        {
-            'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
-        }
-
-        androiddependencies
-        {
-            "com.android.support:support-v4:28.0.0",
         }
         
 	filter "configurations:Debug"
