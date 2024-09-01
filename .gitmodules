@@ -1,3 +1,0 @@
-[submodule "vendor/premake-android-studio"]
-	path = vendor/premake-android-studio
-	url = https://github.com/polymonster/premake-android-studio.git

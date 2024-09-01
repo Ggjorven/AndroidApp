@@ -1,5 +1,5 @@
-project "App"
-	kind "ConsoleApp"
+project "Lib"
+	kind "StaticLib"
 	language "C++"
     cppdialect "C++20"
     staticruntime "on"
@@ -11,19 +11,14 @@ project "App"
         androidsdkversion "34"
         androidminsdkversion "34"
 
-        androidappid "Android.App.Horizon"
-        androidnamespace "Android.App.Horizon"
+        -- Necessary
+        androidnamespace "build.Lib.main"
 
         files 
         { 
             "src/**.h", 
             "src/**.hpp", 
             "src/**.cpp", 
-
-            "java/**.java",
-
-            -- Has to be specified since the generated one is bad.
-            "AndroidManifest.xml"
         }
 
         includedirs
@@ -33,9 +28,7 @@ project "App"
         
         links
         {
-            "log", -- required for c++ logging	
-
-            "Lib"
+            "log" -- required for c++ logging	
         }
         
         buildoptions
@@ -58,11 +51,6 @@ project "App"
             "com.android.support:support-v4:28.0.0",
         }
         
-        assetpackdependencies
-        {
-            "pack"
-        }
-
 	filter "configurations:Debug"
 		defines { "DEBUG" }
 		symbols "On"

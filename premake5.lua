@@ -32,8 +32,9 @@ workspace "AndroidApp"
             ["pack"] = "install-time",
         }
 
-        androidappid "Android.App.Horizon"
-        androidnamespace "Android.App.Horizon"
+group "Dependencies"
+    include "Lib"
+group ""
 
 group ""
     include "Main"
