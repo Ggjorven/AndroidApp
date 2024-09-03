@@ -1,23 +1,19 @@
 package Android.App.App;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 
-public class Main extends Activity
+import com.google.androidgamesdk.GameActivity;
+
+public class Main extends GameActivity
 {
-	public static native int NativeMain();
 
-	static 
-	{
-		System.loadLibrary("App");
-	}
+	static { System.loadLibrary("App"); }
 
 	@Override
-	protected void onCreate(Bundle arg0) 
+	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(arg0);
-
-		NativeMain();
+		super.onCreate(savedInstanceState);
 	}
+
 }
+

@@ -24,7 +24,9 @@ workspace "AndroidApp"
         gradleproperties
         {
             "org.gradle.jvmargs=-Xmx4608m",
-            "org.gradle.parallel=true"
+            "org.gradle.parallel=true",
+            "android.useAndroidX=true", -- For GameActivity
+            "android.prefabVersion=2.0.0"
         }
 
         assetpacks
