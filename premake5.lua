@@ -1,4 +1,4 @@
-require "vendor/premake-android-studio/android_studio"
+require("vendor/premake-android-studio/android_studio")
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}"
 
@@ -24,7 +24,9 @@ workspace "AndroidApp"
         gradleproperties
         {
             "org.gradle.jvmargs=-Xmx4608m",
-            "org.gradle.parallel=true"
+            "org.gradle.parallel=true",
+            "android.useAndroidX=true",
+            -- "android.prefabversion=2.0.0"
         }
 
         assetpacks
@@ -32,10 +34,6 @@ workspace "AndroidApp"
             ["pack"] = "install-time",
         }
 
-group "Dependencies"
-    include "Lib"
 group ""
-
-group ""
-    include "App"
+    include "Game"
 group ""
