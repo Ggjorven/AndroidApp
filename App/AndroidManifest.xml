@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Define the required permissions (adjust as necessary) -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-feature android:name="android.hardware.vulkan.version" android:version="1" />
-    
-    <!-- Define the minimum and target SDK versions -->
-    <uses-sdk
-        android:minSdkVersion="34"
-        android:targetSdkVersion="34" />
-
-    <!-- Define the Main activity -->
     <application
         android:allowBackup="true"
         android:supportsRtl="true"
-        android:appCategory="game"
-        android:isGame="true"
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory">
-
-         <activity
-            android:name="androidx.games.activity.GameActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
+        android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"> <!-- Use a predefined theme -->
+        
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="App" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!-- <activity -->
-        <!--     android:name=".Main" -->
-        <!--     android:exported="true"> -->
-        <!--     <intent-filter> -->
-        <!--         <action android:name="android.intent.action.MAIN" /> -->
-        <!--         <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!--     </intent-filter> -->
-        <!-- </activity> -->
     </application>
 
 </manifest>
