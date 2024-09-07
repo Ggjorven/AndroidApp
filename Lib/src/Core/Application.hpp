@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core/Events.hpp"
 #include "Core/Window.hpp"
 
 namespace Lib
@@ -8,10 +9,12 @@ namespace Lib
     class Application
     {
     public:
-        Application(struct android_app* app);
+        explicit Application(struct android_app* app);
         ~Application();
 
         void Run();
+
+        void OnEvent(AndroidEvent& e);
 
         inline Window* GetWindow() { return m_Window; }
         inline android_app* GetNativeApp() { return m_App; }

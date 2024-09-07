@@ -20,11 +20,13 @@ namespace Lib
 
         void EventCallback(struct android_app* app, int32_t cmd);
 
-        inline bool Initialized() const { return m_Initialized; }
+        [[nodiscard]] inline bool Initialized() const { return m_Initialized; }
 
     private:
         void Init(struct android_app* app);
         void Destroy();
+
+        void ProcessInput(struct android_app* app) const;
 
     private:
         bool m_Initialized = false;
